@@ -41,6 +41,7 @@ async def echo_handler(message: types.Message) -> None:
     try:
         # Send a copy of the received message
         await message.send_copy(chat_id=message.chat.id)
+        await message.answer('Temp patch for test')
     except TypeError:
         # But not all the types is supported to be copied so need to handle it
         await message.answer("Nice try!")
